@@ -10,7 +10,7 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class MovieDetails(
     @PrimaryKey
-    @ColumnInfo(name = "id")
+    @ColumnInfo(name = "movie_id")
     @Json(name = "id")
     val movieId: String,
 

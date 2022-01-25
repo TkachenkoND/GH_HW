@@ -16,5 +16,4 @@ class MovieListActivityViewModel(private val loadMovieDetailsUseCase: LoadMovieD
                 moviesListLiveData = loadMovieDetailsUseCase.execute()
         }
     }
-
 }

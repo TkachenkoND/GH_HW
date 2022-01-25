@@ -86,7 +86,6 @@ class MovieDetailsActivity : AppCompatActivity() {
         Toast.makeText(applicationContext,
             "The movie has been added to favorites",
             Toast.LENGTH_SHORT).show()
-
     }
 
     private fun getMovieId() = intent.extras?.getInt("movieId")!!.toInt()

@@ -1,5 +1,10 @@
 package com.gh.hw_8.di
 
+import androidx.room.Room
+import com.gh.hw_8.data.database.MoviesDataBase
+import com.gh.hw_8.data.database.dao.ActorDetailsDao
+import com.gh.hw_8.data.database.dao.FavoriteMovieDao
+import com.gh.hw_8.data.database.dao.MovieDetailsDao
 import com.gh.hw_8.data.repositoryImpl.FavoriteMovieRepositoryImpl
 import com.gh.hw_8.data.repositoryImpl.ListActorRepositoryImpl
 import com.gh.hw_8.data.repositoryImpl.MovieDetailsRepositoryImpl
@@ -63,5 +68,20 @@ val dataModule = module {
     single<FavoriteMovieRepository> { FavoriteMovieRepositoryImpl(get()) }
     single<ListActorRepository> { ListActorRepositoryImpl(get(),get()) }
     single<MovieDetailsRepository> { MovieDetailsRepositoryImpl(get(),get()) }
+}
+
+private const val DB_NAME = "Movies.db"
+
+val dbModule = module {
+
+    single {
+        Room.databaseBuilder(get(), MoviesDataBase::class.java, DB_NAME)
+            .fallbackToDestructiveMigration()
+            .build()
+    }
+
+    factory { get<MoviesDataBase>().getActorDetailsDao() }
+    factory { get<MoviesDataBase>().getFavoriteMovieDao() }
+    factory { get<MoviesDataBase>().getMovieDetailsDao() }
 
 }

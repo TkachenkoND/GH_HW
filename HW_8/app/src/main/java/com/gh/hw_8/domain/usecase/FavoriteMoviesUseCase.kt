@@ -1,7 +1,6 @@
 package com.gh.hw_8.domain.usecase
 
 import com.gh.hw_8.data.database.entity.FavoriteMovie
-import com.gh.hw_8.domain.models.MovieDetails
 import com.gh.hw_8.domain.repository.FavoriteMovieRepository
 
 class FavoriteMoviesUseCase(private val favoriteMovieRepository: FavoriteMovieRepository){

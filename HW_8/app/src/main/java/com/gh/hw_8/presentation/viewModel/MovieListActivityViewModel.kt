@@ -7,13 +7,14 @@ import com.gh.hw_8.domain.models.MovieDetails
 import com.gh.hw_8.domain.usecase.LoadMovieDetailsUseCase
 import kotlinx.coroutines.launch
 
-class MovieListActivityViewModel(private val loadMovieDetailsUseCase: LoadMovieDetailsUseCase): ViewModel() {
+class MovieListActivityViewModel(private val loadMovieDetailsUseCase: LoadMovieDetailsUseCase) :
+    ViewModel() {
 
     lateinit var moviesListLiveData: LiveData<List<MovieDetails>>
 
     fun loadMovieList() {
         viewModelScope.launch {
-                moviesListLiveData = loadMovieDetailsUseCase.execute()
+            moviesListLiveData = loadMovieDetailsUseCase.execute()
         }
     }
 }

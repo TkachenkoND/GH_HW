@@ -10,7 +10,7 @@ class FavoriteMovieActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        
+
         binding = ActivityMoviesFavoriteBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }

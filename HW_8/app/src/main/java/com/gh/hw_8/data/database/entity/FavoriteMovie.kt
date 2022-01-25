@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "favorite_movies")
 data class FavoriteMovie(
     @PrimaryKey
-    @ColumnInfo(name = "movie_id")
+    @ColumnInfo(name = "favorite_movie_id")
     val movieId: String,
 
     @ColumnInfo(name = "poster_path")

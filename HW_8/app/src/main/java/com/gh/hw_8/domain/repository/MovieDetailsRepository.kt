@@ -4,5 +4,5 @@ import com.gh.hw_8.domain.models.MovieDetailsList
 
 interface MovieDetailsRepository {
 
-    suspend fun getMovieList(): MovieDetailsList
+    fun getMovieList(): MovieDetailsList
 }

@@ -1,8 +1,9 @@
 package com.gh.hw_8.domain.repository
 
-import com.gh.hw_8.domain.models.MovieDetailsList
+import androidx.lifecycle.LiveData
+import com.gh.hw_8.domain.models.MovieDetails
 
 interface MovieDetailsRepository {
 
-    fun getMovieList(): MovieDetailsList
+    suspend fun getMovieList(): LiveData<List<MovieDetails>>
 }

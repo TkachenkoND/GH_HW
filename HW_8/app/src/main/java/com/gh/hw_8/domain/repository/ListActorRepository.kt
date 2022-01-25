@@ -1,8 +1,9 @@
 package com.gh.hw_8.domain.repository
 
-import com.gh.hw_8.domain.models.ActorDetailsList
+import androidx.lifecycle.LiveData
+import com.gh.hw_8.domain.models.ActorDetails
 
 interface ListActorRepository {
 
-    suspend fun getListActorsDyMovieId(movieId: Int): ActorDetailsList
+    suspend fun getListActorsByMovieId(movieId: Int): LiveData<List<ActorDetails>>
 }

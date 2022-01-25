@@ -1,6 +1,10 @@
 package com.gh.hw_8.app
 
 import android.app.Application
+import com.gh.hw_8.di.appModule
+import com.gh.hw_8.di.dataModule
+import com.gh.hw_8.di.domainModule
+import com.gh.hw_8.di.networkModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin

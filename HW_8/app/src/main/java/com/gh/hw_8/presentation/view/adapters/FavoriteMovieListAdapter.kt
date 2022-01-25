@@ -9,7 +9,6 @@ import com.bumptech.glide.Glide
 import com.gh.hw_8.R
 import com.gh.hw_8.data.database.entity.FavoriteMovie
 import com.gh.hw_8.databinding.RecyclerViewFavMovieItemBinding
-import com.gh.hw_8.domain.models.MovieDetails
 
 interface ClickOnBtnRemove {
     fun btnPress(favoriteMovieId: Int)

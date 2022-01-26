@@ -10,7 +10,7 @@ import com.gh.hw_8.presentation.view.adapters.MoviesListAdapter
 import com.gh.hw_8.presentation.viewModel.MovieListActivityViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class MoviesListActivity: AppCompatActivity(), ClickOnTheItem {
+class MoviesListActivity : AppCompatActivity(), ClickOnTheItem {
 
     lateinit var binding: ActivityMoviesListBinding
 
@@ -25,6 +25,7 @@ class MoviesListActivity: AppCompatActivity(), ClickOnTheItem {
 
         initAdapter()
         initObserve()
+        clickOnBtnWatchFavMovies()
     }
 
     private fun initAdapter() {
@@ -38,6 +39,13 @@ class MoviesListActivity: AppCompatActivity(), ClickOnTheItem {
 
         viewModel.moviesListLiveData.observeForever {
             movieListAdapter.submitList(it)
+        }
+    }
+
+    private fun clickOnBtnWatchFavMovies() {
+        binding.btnWatchFavMovies.setOnClickListener {
+            val intent = Intent(this, FavoriteMovieActivity::class.java)
+            startActivity(intent)
         }
     }
 

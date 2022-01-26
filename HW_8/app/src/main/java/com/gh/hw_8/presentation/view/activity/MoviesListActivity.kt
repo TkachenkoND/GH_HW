@@ -37,9 +37,9 @@ class MoviesListActivity : AppCompatActivity(), ClickOnTheItem {
     private fun initObserve() {
         viewModel.loadMovieList()
 
-        viewModel.moviesListLiveData.observeForever {
+        viewModel.moviesListLiveData.observe(this, {
             movieListAdapter.submitList(it)
-        }
+        })
     }
 
     private fun clickOnBtnWatchFavMovies() {

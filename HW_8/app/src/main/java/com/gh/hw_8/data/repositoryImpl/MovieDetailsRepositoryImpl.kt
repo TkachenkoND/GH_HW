@@ -11,7 +11,7 @@ class MovieDetailsRepositoryImpl(
     private val movieDetailsListServices: MovieDetailsListServices,
 ) : MovieDetailsRepository {
 
-    override suspend fun getMovieList(): LiveData<List<MovieDetails>> {
+    override suspend fun getMovieList(): LiveData<List<MovieDetails>>{
         for (movie in movieDetailsListServices.getMovieListFromServices().movieDetailsList)
             movieDetailsDao.insertMovieInDataBase(movie)
 
